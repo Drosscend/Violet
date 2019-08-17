@@ -12,8 +12,6 @@ module.exports = async client => {
       padding: 5,
       margin: 2
     })
-    .emptyLine()
-    .wrap(`${client.user.username}#${client.user.discriminator} en ligne.`)
     .render()
   );
   

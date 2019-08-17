@@ -22,6 +22,9 @@
     "chalk": "^2.4.2",
     "discord.js": "^11.5.1",
     "enmap": "^5.0.1",
-    "moment": "^2.24.0"
+    "inquirer": "^6.5.1",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
+    "os": "^0.1.1"
   }
 }

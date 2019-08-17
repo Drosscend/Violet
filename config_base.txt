@@ -10,18 +10,6 @@ const config = {
       check: () => true
     },
 
-    { level: 2,
-      name: "Moderator",
-      check: (message) => {
-        try {
-          const modRole = message.guild.roles.find(r => r.name.toLowerCase() === message.settings.modRole.toLowerCase());
-          if (modRole && message.member.roles.has(modRole.id)) return true;
-        } catch (e) {
-          return false;
-        }
-      }
-    },
-
     { level: 4,
       name: "Server Owner", 
       check: (message) => message.channel.type === "text" ? (message.guild.ownerID === message.author.id ? true : false) : false

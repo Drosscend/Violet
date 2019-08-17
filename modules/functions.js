@@ -17,13 +17,7 @@ module.exports = (client) => {
   };
 
   const defaultSettings = {
-    "prefix": "yui!",
-    "modLogChannel": "mod-log",
-    "LogChannel": "log",
-    "modRole": "Moderateur",
-    "adminRole": "Administrateur",
-    "welcomeChannel": "welcome",
-    "welcomeEnabled": "false"
+    "prefix": "v!"
   };
 
   client.getSettings = (guild) => {

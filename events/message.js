@@ -42,7 +42,7 @@ module.exports = async (client, message) => {
   }
   //fin level system
 
-  if (!message.channel.permissionsFor(message.guild.me).missing("SEND_MESSAGES", "EMBED_LINKS")) {
+  if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES', 'EMBED_LINKS')) {
     return;
   }
 
