@@ -23,7 +23,6 @@ exports.run = (client, message) => {
         icon_url: client.user.displayAvatarURL,
         text: client.user.username
       },
-      timestamp: new Date(),
       description: `<:browser1:600349429597470740> **Voici mes différentes statistiques**`,
       fields: [
         {

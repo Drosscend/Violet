@@ -4,21 +4,27 @@ exports.run = (client, message, args, level) => {
 
   if (!args[0]) {
     let embedFields = [];
-    if (message.author.id == message.client.config.ownerID) {
-      embedFields.push({
-        name: `<:forbidden:600349288823783449> **Owner** (${client.commands.filter(filters => filters.help.category === "Owner").size} commandes)`,
-        value: client.commands.filter(filters => filters.help.category === "Owner")
-          .map(name => name.help.name).join(", "),
-      });
-    }
+    embedFields.push({
+      name: `<:forbidden:600349288823783449> **Owner** (${client.commands.filter(filters => filters.help.category === "Owner").size} commandes)`,
+      value: client.commands.filter(filters => filters.help.category === "Owner")
+        .map(name => name.help.name).join(", "),
+    });
+    
     embedFields.push({
       name: `:robot: **Bot** (${client.commands.filter(filters => filters.help.category === "Bot").size} commandes)`,
       value: client.commands.filter(filters => filters.help.category === "Bot")
         .map(name => name.help.name).join(", "),
     });
+
     embedFields.push({
       name: `<:settings:600349289394470923> **Configuration** (${client.commands.filter(filters => filters.help.category === "Config").size} commandes)`,
       value: client.commands.filter(filters => filters.help.category === "Config")
+        .map(name => name.help.name).join(", "),
+    });
+
+    embedFields.push({
+      name: `<:browser1:600349429597470740> **Level** (${client.commands.filter(filters => filters.help.category === "Level").size} commandes)`,
+      value: client.commands.filter(filters => filters.help.category === "Level")
         .map(name => name.help.name).join(", "),
     });
 
