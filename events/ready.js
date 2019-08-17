@@ -4,8 +4,6 @@ const logo = require('asciiart-logo');
 
 module.exports = async client => {
 
-  client.logger.log("===================================================");
-
   await console.log(
     logo({
       name: `${client.user.username}`,
@@ -15,7 +13,7 @@ module.exports = async client => {
       margin: 2
     })
     .emptyLine()
-    .wrap(`${client.user.username}#${client.user.discriminator} développé par Kévin.`)
+    .wrap(`${client.user.username}#${client.user.discriminator} en ligne.`)
     .render()
   );
   
@@ -23,4 +21,13 @@ module.exports = async client => {
 
   client.user.setActivity(`${client.settings.get("default").prefix}help`, {type: "PLAYING"});
 
+  //level
+  client.guilds.filter(g => !client.ranking.has(g.id))
+    .forEach((g) => {
+      client.ranking.set(g.id, {
+        members: {}
+      });
+      console.log(`[Database]["ranking"]: ${g.name} configuration added the database`);
+    });
+    //console.log(client.ranking);
 };

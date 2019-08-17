@@ -22,6 +22,9 @@ client.aliases = new Enmap();
 
 client.settings = new Enmap({name: "settings"});
 
+client.ranking = new Enmap({
+  name: "ranking"
+});
 
 const init = async () => {
 
