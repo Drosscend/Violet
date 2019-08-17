@@ -52,7 +52,7 @@ exports.run = async (client, message, [action, key, ...value]) => {
   } else{
     await message.channel.send({
       embed: {
-        color: 0xDF9C9D,
+        color: 0xEE6A8C,
         thumbnail: {
           url: client.user.displayAvatarURL,
         },

@@ -24,7 +24,7 @@ exports.run = (client, message, args, level) => {
 
     message.channel.send({
       embed: {
-        color: 0xDF9C9D,
+        color: 0xEE6A8C,
         thumbnail: {
           url: client.user.displayAvatarURL
         },
@@ -49,7 +49,7 @@ exports.run = (client, message, args, level) => {
 
       message.channel.send({
         embed: {
-          color: 0xDF9C9D,
+          color: 0xEE6A8C,
           thumbnail: {
             url: client.user.displayAvatarURL
           },

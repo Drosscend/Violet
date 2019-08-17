@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
 
     client.channels.get("604667200636190750").send({
         embed: {
-            color: 0xDF9C9D,
+            color: 0xEE6A8C,
             thumbnail: {
                 url: client.user.displayAvatarURL
             },
@@ -25,7 +25,6 @@ exports.run = async (client, message, args) => {
                 icon_url: client.user.displayAvatarURL,
                 text: client.user.username
             },
-            timestamp: new Date(),
             fields: [
                 {
                 name: "Autheur:",

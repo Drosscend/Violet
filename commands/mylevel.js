@@ -6,7 +6,7 @@ exports.run = async (client, message, args, level) => {
   message.channel.send({
     embed: {
         description: `Votre niveau de permission pour m'utiliser ici est **${level}** (${friendly})`,
-        color: 0xDF9C9D,
+        color: 0xEE6A8C,
         thumbnail: {
             url: message.author.displayAvatarURL
         },

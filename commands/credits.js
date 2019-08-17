@@ -4,7 +4,7 @@ exports.run = async (client, message) => {
 
     message.channel.send({
         embed: {
-            color: 0xDF9C9D,
+            color: 0xEE6A8C,
             thumbnail: {
                 url: client.user.displayAvatarURL
             },
@@ -16,7 +16,6 @@ exports.run = async (client, message) => {
                 icon_url: client.user.displayAvatarURL,
                 text: client.user.username
             },
-            timestamp: new Date(),
             description: `
             -[Ota](https://github.com/Steven-Debande)\n
             -[PsyKo ☾](https://github.com/SFallTech)\n

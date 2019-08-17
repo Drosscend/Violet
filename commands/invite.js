@@ -4,7 +4,7 @@ exports.run = async (client, message) => {
 
     message.channel.send({
         embed: {
-            color: 0xDF9C9D,
+            color: 0xEE6A8C,
             thumbnail: {
                 url: client.user.displayAvatarURL
             },
@@ -16,7 +16,6 @@ exports.run = async (client, message) => {
                 icon_url: client.user.displayAvatarURL,
                 text: client.user.username
             },
-            timestamp: new Date(),
             description: "Penssez que si je n'ai pas toute les permissions nécessaire je ne fonctionnerai pas bien ;).",
             fields: [
                 {

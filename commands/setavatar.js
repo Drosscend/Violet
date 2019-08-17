@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
             message.channel.send({
                 embed: {
                     description: `**Avatar actualisés**`,
-                    color: 0xDF9C9D,
+                    color: 0xEE6A8C,
                     thumbnail: {
                         url: member.user.displayAvatarURL
                     },
@@ -26,8 +26,7 @@ exports.run = async (client, message, args) => {
                         icon_url: client.user.displayAvatarURL,
                         text: client.user.username
                     },
-                    timestamp: new Date(),
-                    image: {
+                            image: {
                         url: res
                     },
                 }

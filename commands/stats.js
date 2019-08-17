@@ -11,7 +11,7 @@ exports.run = (client, message) => {
 
   message.channel.send({
     embed: {
-      color: 0xDF9C9D,
+      color: 0xEE6A8C,
       thumbnail: {
         url: client.user.displayAvatarURL
       },
