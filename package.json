@@ -1,0 +1,27 @@
+{
+  "name": "violet",
+  "version": "0.0.1-dev",
+  "description": "🌸Violet (ヴァイオレット) est un bot Discord catégorisée dans l'économie ;)🌸",
+  "main": "shard.js",
+  "scripts": {
+    "start": "node shard.js",
+    "postinstall": "node setup.js"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drosscend/Violet.git"
+  },
+  "author": "Kévin#6715",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "better-sqlite3": "^5.4.0",
+    "chalk": "^2.4.2",
+    "discord.js": "^11.5.1",
+    "enmap": "^5.0.1",
+    "moment": "^2.24.0"
+  }
+}
