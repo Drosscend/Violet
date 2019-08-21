@@ -1,9 +1,26 @@
 "use strict";
 
-module.exports.run = (client, message) => {
+module.exports.run = (client, message, args) => {
+
+    const search = args.slice(0)[0];
+
+    let { member } = message;
+    if (message.mentions.members.size > 0) {
+        member = message.mentions.members.first();
+    } else if (search) {
+        member = client.findersUtil.findMember(message.guild, search);
+        if (member.size === 0) {
+            return message.channel.send(`<:warn:600349289427894272> Aucun membre n'a été trouvé avec: \`${search}\`!`);
+        } else if (member.size === 1) {
+            member = member.first();
+        } else {
+            return message.channel.send(client.findersUtil.formatMembers(client, member));
+        }
+    };
+
     const data = client.ranking.get(message.guild.id);
-    if (!data.members[message.author.id]) {
-        return message.channel.send("Vous n'estes pas dans la base de donnée.");
+    if (!data.members[member.user.id]) {
+        return message.channel.send(`**${member.user.username}** n'est pas dans la base de donnée.`);
     }
     function progressBar(xp, xpMax) {
         const msg = [];
@@ -16,13 +33,13 @@ module.exports.run = (client, message) => {
         }
         return msg.join("");
     }
-    const userdb = data.members[message.author.id];
+    const userdb = data.members[member.user.id];
     message.channel.send({
         embed: {
-            description: `${message.author.tag}\nLevel: ${userdb.level}\nXP: ${progressBar(userdb.exp, userdb.nextexp)}`,
+            description: `${member.user.tag}\nLevel: ${userdb.level}\nXP: ${progressBar(userdb.exp, userdb.nextexp)}`,
             color: 0xEE6A8C,
             thumbnail: {
-                url: message.author.displayAvatarURL
+                url: member.user.displayAvatarURL
             },
             author: {
                 name: message.author.username,
@@ -45,7 +62,7 @@ exports.conf = {
 
 exports.help = {
     name: "level",
-    category: "Niveau",
+    category: "Level",
     description: "Donne votre niveau ou celui de la personne spécifier.",
     usage: "level (user)"
 };
