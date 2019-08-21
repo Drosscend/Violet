@@ -17,5 +17,5 @@ exports.help = {
   name: "say",
   category: "Bot",
   description: "Fait parler le bot à votre place :)",
-  usage: "say [texte}]"
+  usage: "say [texte]"
 };

@@ -4,10 +4,10 @@ module.exports.run = (client, message) => {
       return guild.members[key];
     });
     mapUers.sort((a,b) => (b.exptotal + b.exp) - (a.exptotal + a.exp));
-    message.channel.send(`Meilleurs rangs du serveur | Nombres: \`${mapUers.length}\``, {
+    message.channel.send({
       embed:{
         title: `Vous êtes **${mapUers.map(y => y._id).indexOf(message.author.id) + 1}** et votre score et de **${guild.members[message.author.id].exp + guild.members[message.author.id].exptotal}**`,
-        description: `${mapUers.map((r, i) => `**[${i + 1}]** • **Nom:** \`${message.guild.members.get(r._id) === undefined ? `Left Guild (ID: ${r._id})` : message.guild.members.get(r._id).user.username}\`\n**╚> Score:** \`${r.exp + r.exptotal}\``).slice(0, 10).join('\n')}`,
+        description: `${mapUers.map((r, i) => `**[${i + 1}]** • **Nom:** \`${message.guild.members.get(r._id) === undefined ? `Guild quitté (ID: ${r._id})` : message.guild.members.get(r._id).user.username}\`\n**╚> Score:** \`${r.exp + r.exptotal}\``).slice(0, 10).join('\n')}`,
         color: 0xEE6A8C,
         thumbnail: {
           url: message.guild.iconURL
