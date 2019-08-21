@@ -36,7 +36,7 @@ module.exports = async (client, message) => {
       userdb.members[message.author.id].exp = 0;
       userdb.members[message.author.id].level++;
       userdb.members[message.author.id].nextlevel++;
-      message.channel.send(`Niveau suivant pour ${message.author.tag} => ${userdb.members[message.author.id].level}`);
+      message.channel.send(`Félicitations à ${message.author.tag} il à atteind le niveau ${userdb.members[message.author.id].level}.`);
     }
     client.ranking.set(message.guild.id, userdb);
   }
