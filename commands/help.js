@@ -71,10 +71,10 @@ exports.run = (client, message, args, level) => {
           timestamp: new Date(),
           fields: [{
             name: "**Description:**",
-            value: `${command.help.description == 0 ? "Aucun usage définie" : command.conf.description}`,
+            value: `${command.help.description == 0 ? "Aucun usage définie" : command.help.description}`,
           }, {
             name: "**Usage:**",
-            value: `${command.help.usage == 0 ? "Aucun usage définie" : command.conf.usage}`,
+            value: `${command.help.usage == 0 ? "Aucun usage définie" : command.help.usage}`,
           }, {
             name: "**Category:**",
             value: `${command.help.category}`,
