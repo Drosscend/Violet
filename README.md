@@ -3,7 +3,7 @@
 
 [![NodeJS](https://img.shields.io/badge/node.js-10.16.0-greenBright.svg)](https://nodejs.org/)
 [![DiscordJS](https://img.shields.io/badge/discord.js-11.4.2-greenBright.svg)](https://discord.js.org/#/)
-[![Yui](https://img.shields.io/badge/Violet-0.0.1--dev-greenBright.svg)](https://github.com/Drosscend/Violet)
+[![Violet](https://img.shields.io/badge/Violet-0.0.1--dev-greenBright.svg)](https://github.com/Drosscend/Violet)
 
 ## Prérequis
 
