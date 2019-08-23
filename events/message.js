@@ -42,7 +42,11 @@ module.exports = async (client, message) => {
   }
   //fin level system
 
-  if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES', 'EMBED_LINKS')) {
+  var perms = [
+    'SEND_MESSAGES',
+    'EMBED_LINKS'
+  ]
+  if (!message.channel.permissionsFor(client.user).has(perms)) {
     return;
   }
 
