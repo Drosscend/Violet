@@ -30,14 +30,14 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
     enabled: true,
-    guildOnly: false,
-    aliases: [],
+    guildOnly: true,
+    aliases: ["top2"],
     permLevel: "User"
 };
 
 exports.help = {
-    name: "test",
+    name: "leaderboard",
     category: "Economy",
-    description: "Affiche l'argant que vous avez dans votre compte",
-    usage: "money"
+    description: "Donne les meilleurs personens ayant le plus de coin du serveur.",
+    usage: "leaderboard"
 };
