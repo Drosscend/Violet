@@ -7,7 +7,10 @@ const Enmap = require("enmap");
 
 const client = new Discord.Client({
   disableEveryone: true,
-  fetchAllMembers: true
+  fetchAllMembers: true,
+  disableEvents: {
+    TYPING_START: true
+  },
 });
 
 client.config = require("./config.js");
