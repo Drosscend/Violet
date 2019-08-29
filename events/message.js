@@ -42,6 +42,20 @@ module.exports = async (client, message) => {
   }
   //fin level system
 
+  //début economy system
+  if (!client.economy.get(message.guild.id).members[message.author.id]) {
+    const database2 = client.economy.get(message.guild.id);
+    //console.log(database);
+    database2.members[message.author.id] = {
+      _id: message.author.id,
+      coin: 200
+    };
+    client.economy.set(message.guild.id, database2);
+    //console.log(`[Database(economy)] Member ${message.author.tag} add database`);
+  }
+
+  //fin economy system
+
   var perms = [
     'SEND_MESSAGES',
     'EMBED_LINKS'

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.run = (client, message, args, level) => {
-
+  
   if (!args[0]) {
     let embedFields = [];
     embedFields.push({
@@ -25,6 +25,12 @@ exports.run = (client, message, args, level) => {
     embedFields.push({
       name: `<:browser1:600349429597470740> **Level** (${client.commands.filter(filters => filters.help.category === "Level").size} commandes)`,
       value: client.commands.filter(filters => filters.help.category === "Level")
+        .map(name => name.help.name).join(", "),
+    });
+
+    embedFields.push({
+      name: `💵 **Economy** (${client.commands.filter(filters => filters.help.category === "Economy").size} commandes)`,
+      value: client.commands.filter(filters => filters.help.category === "Economy")
         .map(name => name.help.name).join(", "),
     });
 
