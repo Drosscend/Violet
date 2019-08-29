@@ -31,6 +31,10 @@ client.ranking = new Enmap({
   name: "ranking"
 });
 
+client.economy = new Enmap({
+  name: "economy"
+});
+
 const init = async () => {
 
   const cmdFiles = await readdir("./commands/");
