@@ -6,55 +6,52 @@ module.exports = async (client, message) => {
     return;
   }
 
-  //début level system
-  if (!client.ranking.get(message.guild.id).members[message.author.id]) {
-    const database = client.ranking.get(message.guild.id);
-    //console.log(database);
-    database.members[message.author.id] = {
-      _id: message.author.id,
-      exp: 0,
-      nextexp: 125,
-      exptotal: 0,
-      level: 1,
-      nextlevel: 2,
-      cooldown: 0,
-    };
-    client.ranking.set(message.guild.id, database);
-    //console.log(`[Database] Member ${message.author.tag} add database`);
-  }
-
-  const userdb = client.ranking.get(message.guild.id);
-
-  if ((userdb.members[message.author.id].cooldown > Date.now()) && (userdb.members[message.author.id].cooldown !== 0)) {
-    userdb.members[message.author.id].cooldown - new Date().getTime();
-  } else {
-    userdb.members[message.author.id].cooldown = Date.now() + 2000;
-    userdb.members[message.author.id].exp += 10;
-    if (userdb.members[message.author.id].exp >= userdb.members[message.author.id].nextexp) {
-      userdb.members[message.author.id].nextexp = ((userdb.members[message.author.id].nextlevel * 200) / 2) + 19;
-      userdb.members[message.author.id].exptotal += userdb.members[message.author.id].exp;
-      userdb.members[message.author.id].exp = 0;
-      userdb.members[message.author.id].level++;
-      userdb.members[message.author.id].nextlevel++;
-      message.channel.send(`Félicitations à ${message.author.tag} il à atteind le niveau ${userdb.members[message.author.id].level}.`);
+  /*=================================début level system=================================*/
+    if (!client.ranking.get(message.guild.id).members[message.author.id]) {
+      const database = client.ranking.get(message.guild.id);
+      database.members[message.author.id] = {
+        _id: message.author.id,
+        exp: 0,
+        nextexp: 125,
+        exptotal: 0,
+        level: 1,
+        nextlevel: 2,
+        cooldown: 0,
+      };
+      client.ranking.set(message.guild.id, database);
     }
-    client.ranking.set(message.guild.id, userdb);
-  }
-  //fin level system
 
-  //début economy system
-  if (!client.economy.get(message.guild.id).members[message.author.id]) {
-    const database2 = client.economy.get(message.guild.id);
-    //console.log(database);
-    database2.members[message.author.id] = {
-      _id: message.author.id,
-      coin: 200
-    };
-    client.economy.set(message.guild.id, database2);
-    //console.log(`[Database(economy)] Member ${message.author.tag} add database`);
-  }
+    const userdb = client.ranking.get(message.guild.id);
 
-  //fin economy system
+    if ((userdb.members[message.author.id].cooldown > Date.now()) && (userdb.members[message.author.id].cooldown !== 0)) {
+      userdb.members[message.author.id].cooldown - new Date().getTime();
+    } else {
+      userdb.members[message.author.id].cooldown = Date.now() + 2000;
+      userdb.members[message.author.id].exp += 10;
+      if (userdb.members[message.author.id].exp >= userdb.members[message.author.id].nextexp) {
+        userdb.members[message.author.id].nextexp = ((userdb.members[message.author.id].nextlevel * 200) / 2) + 19;
+        userdb.members[message.author.id].exptotal += userdb.members[message.author.id].exp;
+        userdb.members[message.author.id].exp = 0;
+        userdb.members[message.author.id].level++;
+        userdb.members[message.author.id].nextlevel++;
+        message.channel.send(`Félicitations à ${message.author.tag} il à atteind le niveau ${userdb.members[message.author.id].level}.`);
+      }
+      client.ranking.set(message.guild.id, userdb);
+    }
+  /*=================================fin level system=================================*/
+
+  /*=================================début economy system=================================*/
+    if (!client.economy.get(message.guild.id).members[message.author.id]) {
+      const database2 = client.economy.get(message.guild.id);
+      database2.members[message.author.id] = {
+        _id: message.author.id,
+        coin: 200,
+        //cooldowndaily: 86400000,
+        //cooldownwork: 86400000,
+      };
+      client.economy.set(message.guild.id, database2);
+    }
+  /*=================================fin economy system=================================*/
 
   var perms = [
     'SEND_MESSAGES',
