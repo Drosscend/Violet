@@ -4,11 +4,11 @@ exports.run = async (client, message, args) => {
 
     const data = client.economy.get(message.guild.id);
     if (!data.members[message.author.id]) {
-        return message.channel.send("Vous n'estes pas dans la base de donnée.");
+        return message.channel.send("Vous n'êtes pas dans la base de donnée.");
     }
     
     const userdb = data.members[message.author.id];
-    message.channel.send(`${message.author}, vous avez actuellement **${userdb.coin}** coin dans votre compte. 💰`);
+    message.channel.send(`${message.author}, vous avez actuellement **${userdb.coin}** coin(s) dans votre compte. 💰`);
 
 };
 
