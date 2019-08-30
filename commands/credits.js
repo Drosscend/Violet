@@ -18,7 +18,6 @@ exports.run = async (client, message) => {
             },
             description: `
             -[Ota](https://github.com/Steven-Debande)\n
-            -[PsyKo ☾](https://github.com/SFallTech)\n
             -Emojis fait par [Vectors Market](https://www.flaticon.com/authors/vectors-market) pour [Flaticon](https://www.flaticon.com/) est titulaire d'une licence délivrée par [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).`,
         }
     })
