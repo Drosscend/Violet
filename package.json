@@ -1,6 +1,6 @@
 {
   "name": "violet",
-  "version": "0.0.1-dev",
+  "version": "0.0.2-dev",
   "description": "🌸Violet (ヴァイオレット) est un bot Discord catégorisée dans l'économie ;)🌸",
   "main": "shard.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "inquirer": "^6.5.1",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
-    "os": "^0.1.1"
+    "os": "^0.1.1",
+    "speedtest-net": "^1.5.1"
   }
 }
