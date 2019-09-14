@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
     message.channel.send("Calcul en cours ...").then((msg) => {
         speed.on('data', async data => {
 
-            if(message.deletable) message.delete;
+            msg.delete();
 
             message.channel.send({ embed: {
                 title: "Ping en général",
