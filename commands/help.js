@@ -28,11 +28,6 @@ exports.run = (client, message, args, level) => {
         .map(name => name.help.name).join(", "),
     });
 
-    embedFields.push({
-      name: `💵 **Economy** (${client.commands.filter(filters => filters.help.category === "Economy").size} commandes)`,
-      value: client.commands.filter(filters => filters.help.category === "Economy")
-        .map(name => name.help.name).join(", "),
-    });
 
     message.channel.send({
       embed: {

@@ -29,13 +29,4 @@ module.exports = async client => {
     });
     //console.log(client.ranking);
 
-  //economy
-  client.guilds.filter(g => !client.economy.has(g.id))
-    .forEach((g) => {
-      client.economy.set(g.id, {
-        members: {}
-      });
-      console.log(`[Database]["economy"]: ${g.name} configuration added the database`);
-    });
-    //console.log(client.economy);
   };
